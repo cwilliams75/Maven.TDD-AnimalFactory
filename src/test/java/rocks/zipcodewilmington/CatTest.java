@@ -39,5 +39,57 @@ public class CatTest {
         Assert.assertEquals(givenBirthDate, retrievedBirthDate);
         Assert.assertEquals(givenId, retrievedId);
     }
+    @Test
+    public void catNameTest() {
+        Date date = new Date(1999);
+        Cat testCat = new Cat("Corey", date, 420);
+        testCat.setName("Dude");
+
+        String expected = "Dude";
+        String actual = testCat.getName();
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void setBirthDateTest() {
+        Date date = new Date(1999);
+        Cat testCat = new Cat("Corey", date, 420);
+        Date testDate = new Date(2019);
+        testCat.setBirthDate(testDate);
+
+        Date expected = testDate;
+        Date actual = testCat.getBirthDate();
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void speakTest() {
+        Date date = new Date(1999);
+        Cat testCat = new Cat("Corey", date, 420);
+
+        String expected = "meow!";
+        String actual = testCat.speak();
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void eatTest() {
+        Date date = new Date(1999);
+        Cat testCat = new Cat("Corey", date, 420);
+
+        Food goldFish = new Food();
+        testCat.eat(goldFish);
+
+        Integer expected = 1;
+        Integer actual = testCat.getNumberOfMealsEaten();
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void getIdTest() {
+        Date date = new Date(1999);
+        Cat testCat = new Cat("Corey", date, 420);
+
+        Integer expected =  420;
+        Integer actual = testCat.getId();
+        Assert.assertEquals(expected,actual);
+
+    }
 
 }
